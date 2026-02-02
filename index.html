@@ -3,60 +3,144 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Vona's Creation — Digital Business Card</title>
+  <title>Vona’s Creation — Digital Business Card</title>
+
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-      background: #ffddd9;
-      color: #ffffff;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #fff1f2;
       display: flex;
       align-items: center;
       justify-content: center;
-      height: 100vh;
+      min-height: 100vh;
+      padding: 20px;
     }
+
     .card {
       background: #6a040f;
-      border-radius: 22px;
-      padding: 26px;
+      border-radius: 28px;
+      padding: 28px;
       width: 100%;
-      max-width: 360px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+      max-width: 380px;
+      box-shadow: 0 25px 50px rgba(106, 4, 15, 0.35);
+      text-align: center;
+      animation: fadeUp 0.8s ease;
     }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Logo */
+    .logo {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      background: #f2a1a8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 18px;
+      overflow: hidden;
+    }
+
+    .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
     h1 {
       margin: 0;
-      font-size: 1.7rem;
+      font-size: 1.8rem;
+      color: #ffffff;
+      letter-spacing: 0.5px;
     }
+
     p {
-      color: #b0b0b0;
-      margin: 8px 0 22px;
-      line-height: 1.4;
+      margin: 10px 0 24px;
+      color: #ffd6da;
+      font-size: 0.95rem;
+      line-height: 1.5;
     }
+
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
     a.button {
-      display: block;
-      text-align: center;
       padding: 14px;
-      margin-top: 12px;
-      background: #d6747e;
-      color: white;
+      border-radius: 16px;
+      font-weight: 600;
       text-decoration: none;
-      border-radius: 14px;
-      font-weight: 500;
+      transition: all 0.25s ease;
     }
+
+    a.primary {
+      background: #f2a1a8;
+      color: #6a040f;
+    }
+
+    a.primary:hover {
+      background: #ffd6da;
+      transform: scale(1.03);
+    }
+
     a.secondary {
-      background: #2c2c2e;
+      background: rgba(255, 255, 255, 0.15);
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+    }
+
+    a.secondary:hover {
+      background: #9d0208;
+      border-color: #9d0208;
+      transform: translateY(-2px);
+    }
+
+    /* Desktop polish */
+    @media (min-width: 768px) {
+      .card {
+        padding: 34px;
+      }
     }
   </style>
 </head>
+
 <body>
   <div class="card">
-    <h1>Vona's Creation</h1>
+
+    <div class="logo">
+      <img src="vc.png" alt="Vona’s Creation Logo">
+    </div>
+
+    <h1>Vona’s Creation</h1>
+
     <p>
-        Braider || Curly Hair Specialist || Type 4 Specialist    
+      Braider • Curly Hair Specialist<br/>
+      Type 4 Hair Expert
     </p>
-    <a href="VC.vcf" class="button">Save to Contacts</a>
-    <a href="https://www.instagram.com/vona.creation" class="button secondary">Instagram</a>
-    <a href="mailto:vona.creation@gmail.com" class="button secondary">Email</a>
+
+    <div class="buttons">
+      <a href="VC.vcf" class="button primary">Save to Contacts</a>
+      <a href="https://www.instagram.com/vona.creation" class="button secondary">Instagram</a>
+      <a href="mailto:vona.creation@gmail.com" class="button secondary">Email</a>
+    </div>
+
   </div>
 </body>
 </html>
